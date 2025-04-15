@@ -1,0 +1,26 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - googleCloudLocationProjects
+    properties:
+      googleCloudLocationProjects:
+        type: string
+        description: "Comma-separated list of location:project-id pairs. Example:
+          'us-east1:google-project-id1,us-central1:google-project-id2'"
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['build/index.js'],
+      env: {
+        GOOGLE_CLOUD_LOCATION_PROJECTS: config.googleCloudLocationProjects
+      }
+    })
+  exampleConfig:
+    googleCloudLocationProjects: us-east1:google-project-id1,us-central1:google-project-id2
