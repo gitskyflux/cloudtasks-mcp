@@ -1,4 +1,5 @@
 # Cloud Tasks MCP Server
+[![smithery badge](https://smithery.ai/badge/@gitskyflux/cloudtasks-mcp)](https://smithery.ai/server/@gitskyflux/cloudtasks-mcp)
 
 A Model Context Protocol (MCP) server for Google Cloud Tasks that enables interactions with Google Cloud Tasks queues and tasks.
 
@@ -12,6 +13,16 @@ A Model Context Protocol (MCP) server for Google Cloud Tasks that enables intera
 - Delete tasks from a queue
 
 ## Setup
+
+### Installing via Smithery
+
+To install Cloud Tasks Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@gitskyflux/cloudtasks-mcp):
+
+```bash
+npx -y @smithery/cli install @gitskyflux/cloudtasks-mcp --client claude
+```
+
+### Manual Installation
 
 1. **Install dependencies**:
    ```
